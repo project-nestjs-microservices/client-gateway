@@ -13,6 +13,9 @@ export class OrdersController {
   @Post()
   create(@Body() createOrderDto: CreateOrderDto) {
     return this.ordersClient.send('createOrder', createOrderDto)
+      .pipe(
+        catchError(error => { throw new RpcException(error)})
+      )
   }
 
   @Get()
