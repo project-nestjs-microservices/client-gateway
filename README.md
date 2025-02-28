@@ -14,4 +14,9 @@ y devolver la respuesta al cliente
 ```shell
 docker run -d --name transports-server -p 4222:4222 -p 8222:8222 transports
 ```
+## PROD
+Ejecutar para crear la imagen de producción
 
+```shell
+docker build -f .\dockerfile.prod -t client-gateway .
+```
